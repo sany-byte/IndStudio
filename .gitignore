@@ -1,0 +1,44 @@
+# Credentials and authentication material
+.env
+.env.*
+!.env.example
+*.htpasswd
+*.pem
+*.key
+*.p12
+*.pfx
+.mcp-token*
+*credentials*
+*token-stage*
+
+# Runtime data, logs and generated exports
+data/
+*.sqlite*
+*.db
+*.log
+*.response
+*.zip
+*.tar.gz
+
+# Keep only source fixtures from work and outputs
+work/*
+!work/prompt_model.json
+outputs/*
+!outputs/prompt_pilot/
+
+# Local environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.playwright-cli/
+.DS_Store
+.idea/
+.vscode/
+
+# Private source datasets and pilot assets
+inputs/*
+!inputs/README.md
+outputs/prompt_pilot/*
+!outputs/prompt_pilot/README.md

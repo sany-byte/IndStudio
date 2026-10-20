@@ -1,0 +1,39 @@
+{
+  "style": "Clean 2D food illustration with bold dark-red-brown outlines, flat cel shading, restrained highlights and recognizable food texture. Centered isolated ingredient asset on plain white, full silhouette visible with generous margins. Consistent line weight.",
+  "tests": {
+    "tomato_whole": {
+      "content": "One whole ripe red round tomato, approximately 7 cm wide. Smooth taut red skin, a small green star-shaped calyx and short stem on top. A single intact fruit seen from slightly above at a three-quarter angle."
+    },
+    "tomato_section": {
+      "content": "One crosswise half of a ripe red tomato, approximately 7 cm wide. The complete circular cut face is tilted toward the viewer, revealing several irregular seed chambers with pale seeds in translucent gel and a pale central core. Red skin follows the outer rim. Exactly one tomato half, retaining visible thickness behind the cut face."
+    },
+    "tomato_chopped_a": {
+      "content": "One compact low pile of roughly diced ripe red tomato flesh. The entire tomato is cut into about 25 small irregular knife-cut chunks, each 1\u20131.5 cm across. Most visible surfaces are solid juicy red flesh with uneven cut edges; scattered tiny seeds and small gel pockets appear on a few chunks. A few outer chunks carry thin red skin. Naturally overlapping pieces viewed from above."
+    },
+    "tomato_chopped_b": {
+      "content": "One compact heap of coarsely chopped ripe tomato, consisting entirely of about 25 small uneven pieces of soft red flesh, 1\u20131.5 cm wide. Each piece has a different irregular outline, a slightly flattened body and soft moist knife-cut edges. The heap contains short ragged flesh fragments and a few thin curved skin slivers. Tiny scattered seeds and small translucent gel flecks sit between overlapping pieces. Viewed from above."
+    },
+    "tomato_chopped_c": {
+      "content": "A dense low mound of finely chopped fresh tomato, made entirely of small soft bits of red tomato flesh. Juicy pulp is broken into many irregular ragged fragments about 1 cm wide, with rounded uneven contours and naturally crushed cut edges. The pieces nestle closely together into one moist chopped portion. Tiny seed-gel fragments are mixed through the red pulp; thin skin fragments appear occasionally. Viewed from above."
+    },
+    "tomato_section_b": {
+      "content": "One thick hemispherical half of a ripe red tomato, cut once across its middle. The tomato half has a 7 cm wide circular cut face and a rounded red-skin body extending 3.5 cm behind it. Three-quarter side view: both the broad seed-filled cut face and the deep curved outer skin are clearly visible. Several seed chambers with pale seeds in translucent gel surround a pale central core. Exactly one half."
+    },
+    "tomato_chopped_d": {
+      "content": "One small loose mound of chopped ripe tomato pulp. About 25 small, soft, irregular morsels with curved asymmetrical silhouettes and ragged edges overlap naturally. The pieces vary between squashed rounded lumps and short red flesh scraps, about 1 cm across. A few glossy gel fragments contain pale seeds. Occasional thin red skin patches follow the uneven contours. View from above."
+    },
+    "rice_dry": {
+      "content": "One small loose mound of dry uncooked white long-grain rice, about 7 cm across and 2 cm high. Many distinct slender ivory grains overlap naturally, with scattered grains at the edge. The rice itself is the entire isolated object. Elevated three-quarter view showing both the top and the low height of the mound."
+    },
+    "olive_oil_bowl": {
+      "content": "One small plain white ceramic bowl holding 25 ml of clear golden-yellow olive oil. The bowl is approximately 7 cm wide. Its entire outer silhouette and rim are visible. Elevated three-quarter view clearly shows the still liquid surface inside the bowl, with a restrained golden highlight. Bowl and oil together form one isolated ingredient object, prepared before pouring."
+    },
+    "tomato_chopped_e": {
+      "content": "One small loose mound of chopped ripe tomato pulp. About 25 small, soft, irregular morsels with curved asymmetrical silhouettes and ragged knife-cut edges overlap naturally, each about 1 cm across. The fresh juicy scarlet flesh shows pale-red uneven cut surfaces and occasional smooth dark-red skin patches. A few broken translucent seed-gel pockets contain pale-yellow seeds. Rounded uneven lumps mix with short flesh scraps. View from above."
+    },
+    "tomato_chopped_e_seed43": {
+      "content": "One small loose mound of chopped ripe tomato pulp. About 25 small, soft, irregular morsels with curved asymmetrical silhouettes and ragged knife-cut edges overlap naturally, each about 1 cm across. The fresh juicy scarlet flesh shows pale-red uneven cut surfaces and occasional smooth dark-red skin patches. A few broken translucent seed-gel pockets contain pale-yellow seeds. Rounded uneven lumps mix with short flesh scraps. View from above.",
+      "seed": 43
+    }
+  }
+}

@@ -1,0 +1,71 @@
+name: ingredient-studio
+services:
+  generator:
+    container_name: ingredient-studio
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    environment:
+      APP_BASE_PATH: /generator
+      APP_PUBLIC_URL: https://studio.example.com/generator
+      APP_MCP_TOKEN_HASH_FILE: /app/.mcp-token.sha256
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+      - ./.mcp-token.sha256:/app/.mcp-token.sha256:ro
+    networks:
+      - traefik
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=studio_proxy
+      - traefik.http.routers.ingredient-studio.rule=Host(`studio.example.com`) && (Path(`/generator`) || PathPrefix(`/generator/`))
+      - traefik.http.routers.ingredient-studio.priority=20000
+      - traefik.http.routers.ingredient-studio.entrypoints=websecure
+      - traefik.http.routers.ingredient-studio.tls=true
+      - traefik.http.routers.ingredient-studio.tls.certresolver=myresolver
+      - traefik.http.routers.ingredient-studio.middlewares=generator-auth@file
+      - traefik.http.routers.ingredient-studio-mcp.rule=Host(`studio.example.com`) && Path(`/generator/mcp`)
+      - traefik.http.routers.ingredient-studio-mcp.priority=21000
+      - traefik.http.routers.ingredient-studio-mcp.entrypoints=websecure
+      - traefik.http.routers.ingredient-studio-mcp.tls=true
+      - traefik.http.routers.ingredient-studio-mcp.tls.certresolver=myresolver
+      - traefik.http.routers.ingredient-studio-mcp.service=ingredient-studio
+      - traefik.http.services.ingredient-studio.loadbalancer.server.port=8765
+      - traefik.http.routers.ingredient-studio-http.rule=Host(`studio.example.com`) && (Path(`/generator`) || PathPrefix(`/generator/`))
+      - traefik.http.routers.ingredient-studio-http.priority=20000
+      - traefik.http.routers.ingredient-studio-http.entrypoints=web
+      - traefik.http.routers.ingredient-studio-http.middlewares=generator-https
+      - traefik.http.middlewares.generator-https.redirectscheme.scheme=https
+      - traefik.http.middlewares.generator-https.redirectscheme.permanent=true
+  review-bot:
+    image: ingredient-review-bot:latest
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    container_name: ingredient-review-bot
+    command: ["python", "telegram_review_bot.py"]
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    networks:
+      - traefik
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp
+networks:
+  traefik:
+    external: true
+    name: studio_proxy

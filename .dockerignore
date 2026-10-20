@@ -1,0 +1,10 @@
+.env
+.mcp-token.sha256
+data
+work/*
+!work/prompt_model.json
+outputs/*
+!outputs/prompt_pilot
+!outputs/prompt_pilot/**
+__pycache__
+.git

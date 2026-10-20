@@ -1,0 +1,24 @@
+[Unit]
+Description=Ingredient Studio transparent image variants
+After=docker.service
+
+[Service]
+Type=simple
+User=10001
+Group=10001
+WorkingDirectory=/opt/ingredient-studio
+ExecStart=/usr/bin/python3 /opt/ingredient-studio/background_removal.py
+Environment=MAGICK_THREAD_LIMIT=1
+Restart=on-failure
+RestartSec=5
+Nice=10
+CPUQuota=100%
+MemoryMax=512M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/ingredient-studio/data
+
+[Install]
+WantedBy=multi-user.target
